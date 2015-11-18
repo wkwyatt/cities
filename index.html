@@ -10,9 +10,19 @@
 	<script type="text/javascript" src="controller.js"></script>
 </head>
 <body id="wrapper" ng-controller="myController">
-	<button></button>
-	<div class="cities" ng-repeat="city in cities">
-		<span>{{city.city}}</span>
+	<div class="row">	
+		Search <input type="text" ng-model="query">
+		<table>
+			<tr>
+				<th><a href="#" ng-click="sortField = 'name'; reverse = !reverse">City</a></th>
+				<th><a href="#" ng-click="sortField = 'desc'; reverse = !reverse">State</a></th>
+			</tr>
+			<tr ng-repeat="city in cities | filter:query | orderBy:sortField">
+				<td>{{city.city}}</td>
+				<td>{{person.state}}</td>
+			</tr>
+		</table>
 	</div>
+
 </body>
 </html>
