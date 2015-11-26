@@ -1,5 +1,5 @@
-var myApp = angular.module('myApp', [cities]);
-myApp.controller("myController", function($scope, cities) {
+var myApp = angular.module('myApp', []);
+myApp.controller("myController", function($scope) {
 	// $scope.buttons = []
 	$scope.myCities = cities;
 
